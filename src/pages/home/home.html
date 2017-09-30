@@ -1,0 +1,99 @@
+<!--
+<ion-header>
+  <ion-navbar class="nav">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content class="home" padding>
+  <ion-refresher *ngIf="city" pullMin=100 (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content class="refresher" pullingIcon="ios-refresh-circle-outline" pullingText="Pull to refresh" refreshingSpinner="crescent"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- <button ion-button block round (click)="locateMe()">Locate Me</button> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label class="city-label">City</ion-label>
+          <ion-input maxlength=60 type="text" class="city-input" autofocus [(ngModel)]="city" name="city" autocomplete="off"></ion-input>
+          <button class="search-icon" *ngIf="city" clear item-content ion-button icon-only (click)="getWeather()">
+            <ion-icon item-content name="search"></ion-icon>
+          </button>
+          <button class="gps-icon" clear item-content ion-button icon-only (click)="locateMe()">              
+            <ion-icon name="locate"></ion-icon>
+          </button>
+          <!-- <button ion-icon class="search-icon" *ngIf="city" item-content name="search" (click)="getWeather($event)"></button> -->
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="hasError">
+    <ion-row>
+      <ion-col text-center width-50 offset-25>
+        <h2 class="error-msg">City not found !</h2>
+        <h3>Try searching for</h3>
+        <!-- <ion-list inset> -->
+        <ion-item *ngFor="let randomCity of shuffledCities">
+          <button [id]="randomCity" ion-button color="secondary" block large (click)="suggestedWeather($event)">{{randomCity}}</button>
+        </ion-item>
+        <!-- </ion-list> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="weather && !hasError">
+
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{ weather.name }}</h2>
+        <i class="icon owf owf-{{weather.weather[0].id}} owf-4x"></i>
+        <!-- <div class="icon"><img src="{{ weather.icon_url }}" alt="weather_icon"></div> -->
+        <h3 class="description"> {{ weather.weather[0].description }}</h3>
+        <h1 class="temp"> {{ weather.main.temp }}&deg; {{ settings.tempUnit }}</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-100>
+        <ion-list inset>
+          <ion-item>
+            <strong>Temperature </strong><span class="weather-data">{{ weather.main.temp }}&deg; {{ settings.tempUnit }}</span>
+            <ion-icon name="ios-thermometer-outline" item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+            <strong>Humidity </strong><span class="weather-data">{{ weather.main.humidity }}%</span>
+            <ion-icon name="ios-water-outline" item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+            <strong>Pressure </strong><span class="weather-data">{{ weather.main.pressure }} mBar</span>
+            <ion-icon name="ios-globe-outline" item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+            <strong>Visibility </strong><span class="weather-data">{{ weather.visibility }}</span>
+            <ion-icon name="ios-eye-outline" item-start></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-100>
+        <ion-list inset>
+          <ion-item>
+            <strong>Sunrise </strong><span class="weather-data">{{ weather.sys.sunrise }}</span>
+            <ion-icon name="sunny" item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+            <strong>Sunset </strong><span class="weather-data">{{ weather.sys.sunset }}</span>
+            <ion-icon name="moon" item-start></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,140 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+// @import "theme.light";
+// @import "theme.dark";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+/**
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+);
+*/
+
+$colors: (
+  tm1:        #6495ed,
+  tm2:        #435d8c,
+  vanta:      #000,
+  milk:       #fff,
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+);
+
+// material design pallete
+$mdcolors: (
+  darkPrimary: #0288d1,
+  primary: #03a9f4,
+  lightPrimary: #b3e5fc,
+  light: #fff,
+  accent: #ff9800,
+  primaryText: #212121,
+  secondaryText: #757575,
+  line: #BDBDBD,
+);
+
+// top toolbar
+$toolbar-md-background: color($mdcolors, darkPrimary);
+
+// bottom tabs
+$tabs-md-background: color($mdcolors, darkPrimary);
+$tabs-md-tab-color-active: color($mdcolors, light);
+$tabs-md-tab-color-inactive: color($mdcolors, lightPrimary);
+$tabs-md-tab-text-color-active: color($mdcolors, light);
+$tabs-md-tab-text-color-inactive: color($mdcolors, lightPrimary);
+
+$list-md-background-color: color($mdcolors, darkPrimary);
+$list-md-text-color: color($mdcolors, light);
+$list-md-header-color: color($colors, secondary);
+
+$text-input-md-show-focus-highlight: false;
+$label-md-text-color: color($mdcolors, lightPrimary);
+
+$radio-md-color-off: color($mdcolors, lightPrimary);
+$radio-md-color-on: color($mdcolors, light);
+
+
+$refresher-height: 90px;
+$refresher-icon-color: color($mdcolors, light);
+$refresher-text-color: color($mdcolors, light);
+$refresher-border-color: color($mdcolors, darkPrimary);
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

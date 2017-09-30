@@ -1,0 +1,22 @@
+@import "./variables";
+
+.light-theme {
+  ion-content {
+    transition: 1s ease;    
+  }
+
+  .tabs-md .tabbar, .item-md {
+    transition: 1s;
+  }
+
+  .toolbar-background {
+    background-color: color($mdcolors, darkPrimary);
+    transition: 1s ease;    
+  }
+
+  .home, .about, .settings {
+    background: color($mdcolors, primary);
+    color: color($mdcolors, light);
+    transition: 1s;    
+  }
+}

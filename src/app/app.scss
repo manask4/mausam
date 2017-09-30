@@ -1,0 +1,41 @@
+@import "../theme/theme.dark";
+@import "../theme/theme.light";
+
+.home, .about, .settings {
+  // background: color($mdcolors, primary);
+  // color: color($mdcolors, light);
+  // margin-top: 25px;
+}
+
+.toolbar-title {
+  text-align: center;
+}
+
+.temp {
+  font-size: 50px;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.location, .icon, .description {
+  text-align: center;
+}
+
+.icon img {
+  width: 70px;
+}
+
+.location {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.description {
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.item-md.item-block .item-inner {
+  border-bottom: 0 !important;
+}

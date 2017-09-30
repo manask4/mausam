@@ -1,0 +1,25 @@
+page-about {
+
+}
+
+.app-icon {
+  font-size: 12em;
+  display: flex;
+  justify-content: center;
+}
+
+.app-name {
+  display: flex;
+  font-weight: bold !important;
+  font-size: 2em !important;
+  justify-content: center;
+}
+
+.app-credits {
+  text-align: center;
+}
+
+#app-credit-author {
+  font-weight: bold;
+  color: #ff9800;
+}

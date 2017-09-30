@@ -1,0 +1,28 @@
+.dark-theme {
+  ion-content {
+    transition: 1s ease;
+  }
+
+  .toolbar-title {
+    color: #fff;
+    transition: 1s ease;
+  }
+
+  .header .toolbar-background {
+    border-color: #fff;
+    background-color: #303f9f;
+    transition: 1s ease;
+  }
+
+  .tabs-md .tabbar, .item-md {
+    background-color: #303f9f;
+    transition: 1s;
+  }
+
+  .home, .about, .settings {
+    background: #3f51b5;
+    color: color($mdcolors, light);
+    transition: 1s;    
+  }
+
+}

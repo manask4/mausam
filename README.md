@@ -1,0 +1,1 @@
+This is a simple weather application powered by Open Weather Map api and Ionic framework.

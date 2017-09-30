@@ -1,0 +1,49 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+
+<ion-content class="settings" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-100>
+        <!-- <ion-list> -->
+        <!-- <form (ngSubmit)="saveSettings($event)"> -->
+          <ion-list radio-group [(ngModel)]="tempUnit">
+            <ion-list-header>
+              Temperature Unit
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Celcius</ion-label>
+              <ion-radio (ionSelect)="radioChecked()" name="tempUnit" value="C"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Farenheit</ion-label>
+              <ion-radio (ionSelect)="radioChecked()" name="tempUnit" value="F"></ion-radio>
+            </ion-item>
+          </ion-list>
+          <br>
+          <ion-list radio-group [(ngModel)]="theme">
+            <ion-list-header>
+              Theme
+            </ion-list-header>
+            <ion-item>
+              <ion-label>Light</ion-label>
+              <ion-radio (ionSelect)="radioChecked()" name="theme" value="light"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Dark</ion-label>
+              <ion-radio (ionSelect)="radioChecked()" name="theme" value="dark"></ion-radio>
+            </ion-item>
+          </ion-list>
+          <!-- <button ion-button color="secondary" class="settings-button">Save</button>           -->
+        <!-- </form> -->
+        <!-- </ion-list> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
